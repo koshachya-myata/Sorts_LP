@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Bootstrap 4</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+	 crossorigin="anonymous">
+   <link rel="stylesheet" href="static/style/animate.css">
+  <script src = "static/js/wow.js"></script>
+  <script>
+     new WOW().init();
+  </script>
+	<link rel="stylesheet" href="static/style/style.css">
+
+  <link rel="stylesheet" href="static/style/onepage.css">
+
+</head>
+
+
+<body class="m-0 p-0">
+  <div class="main">
+
+      <div class="hero container-fluid position-relative section">  
+          <div class="landing-text text-center">  
+              <h1 class = "wow fadeIn" data-wow-duration = "0.7s">Какая сортировка лучше?</h1>
+              <h4 class = "display-4 wow fadeIn" data-wow-duration = "0.7s">В настоящей работе, Мы сравним скорости выполнения различных сортировок. Проанализируем результаты, сформулируем вывод.</h4>
+          </div>
+      </div>
+
+
+
+	<div id="mySlider" class="carousel slide section" data-ride="carousel">
+		<ol class="carousel-indicators">
+			<li data-target="#mySlider" data-slide-to="0" class="active"></li>
+			<li data-target="#mySlider" data-slide-to="1"></li>
+			<li data-target="#mySlider" data-slide-to="2"></li>
+      <li data-target="#mySlider" data-slide-to="3"></li>
+      <li data-target="#mySlider" data-slide-to="4"></li>
+		</ol>
+		<div class="carousel-inner">
+			<div class="carousel-item active">
+				<img src="static/img/1.png" alt="" class="d-block w-100 carousel-item-img">
+          <div class="carousel-caption">
+            <h3>Bubble_sort</h3>
+            <p class = "font">Является самой медленной из всех рассматриваемых сортировок. Нет смысла ее использовать на парктике.</p>
+          </div>
+			</div>
+      <div class="carousel-item">
+        <img src="static/img/2.png" alt="" class="d-block w-100 carousel-item-img">
+            <div class="carousel-caption wow fadeInDown">
+              <h3>Сортировка вставками</h3>
+              <p>Хуйня</p>
+          </div>
+      </div>
+			<div class="carousel-item">
+				<img src="static/img/2.png" alt="" class="d-block w-100 carousel-item-img">
+                  <div class="carousel-caption wow fadeInDown" >
+            <h3>Merge_sort</h3>
+            <p>Хуйня</p>
+          </div>
+			</div>
+			<div class="carousel-item">
+				<img src="static/img/3.png" alt="" class="d-block w-100 carousel-item-img">
+                  <div class="carousel-caption wow fadeInDown">
+            <h3>Quick_sort</h3>
+            <p>Хуйня</p>
+          </div>
+			</div>
+      <div class="carousel-item">
+        <img src="static/img/2.png" alt="" class="d-block w-100 carousel-item-img">
+                  <div class="carousel-caption wow fadeInDown">
+            <h3>Сортировка подсчётом</h3>
+            <p>Хуйня</p>
+          </div>
+      </div>
+		</div>
+		<a href="#mySlider" class="carousel-control-prev" role="button" data-slide="prev">
+			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+			<span class="sr-only">Previous</span>
+		</a>
+		<a href="#mySlider" class="carousel-control-next" role="button" data-slide="next">
+			<span class="carousel-control-next-icon" aria-hidden="true"></span>
+			<span class="sr-only">Next</span>
+		</a>
+	</div>
+
+
+
+  <div class="tech section" data-wow-duration = "1s">  
+      <h1 class="mt-5 tech_header">Еба тут можно тестить</h1>
+
+      <form action="" method="POST" class = "form_tech">
+      <div class="form-check">
+              <input class="form-check-input" type="radio" name="how" id="rnd" value="rnd" checked>
+              <label class="form-check-label" for="rnd">Рандомные числа</label>
+        </div>
+
+      <div class="form-check">
+          <input class="form-check-input" type="radio" name="how" id="sam" value="sam">
+          <label class="form-check-label" for="sam">Самостоятельный ввод</label>
+      </div>
+
+        <div class="form-group" id = "rnd_input">
+            <label for="n">Введите n</label>
+            <input class="form-control" type=" text" placeholder="N" name = "n" id = "n">
+        </div>
+
+        <div class="form-group invisible" id = "sam_input">
+            <label for="nums">Введите числа через пробел</label>
+            <input class="form-control" type=" text" placeholder="num num num.." name = "nums" id = "nums">
+        </div>
+
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="type" id="int" value="int" checked>
+          <label class="form-check-label" for="int">Целые числа</label>
+        </div>
+        <div class="form-check">
+              <input class="form-check-input" type="radio" name="type" id="float" value="float">
+              <label class="form-check-label" for="float">Вещественные числа</label>
+        </div>
+        <button type="submit" class="btn btn-primary form-b">Submit</button>
+        <!--<button type="button" class="btn btn-danger form-b">Reset</button>-->
+      </form>
+    <table class="table table-inverse table-bordered">
+    <thead>
+      <tr>
+        <th>N</th>
+        <th>Тип</th>
+        <th>Пузырьковая сортировка</th>
+        <th>Сортировка вставками</th>
+        <th>Быстрая сортировка</th>
+        <th>Сортировка слиянием</th>
+        <th>Сортировка подсчетом</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for time in rows %}
+      <tr>
+        <th scope="row">{{ time['n'] }}</th>
+        <th scope="row">{{ time['type'] }}</th>
+        <td>{{ time['bubble'] }}</td>
+        <td>{{ time['insert'] }}</td>
+        <td>{{ time['quick'] }}</td>
+        <td>{{ time['merge'] }}</td>
+        <td>{{ time['bubble'] }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  </div>
+
+  </div>
+
+<script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+	 crossorigin="anonymous"></script>
+
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+	 crossorigin="anonymous"></script>
+
+    <script src="/static/js/main.js"> </script>
+      <script src = "static/js/onepage.js"></script>
+    <script>
+      $(".main").onepage_scroll({
+   sectionContainer: ".section",     // sectionContainer accepts any kind of selector in case you don't want to use section
+   easing: "linear",                  // Easing options accepts the CSS3 easing animation such "ease", "linear", "ease-in",
+                                    // "ease-out", "ease-in-out", or even cubic bezier value such as "cubic-bezier(0.175, 0.885, 0.420, 1.310)"
+   animationTime: 300,             // AnimationTime let you define how long each section takes to animate
+   pagination: true,                // You can either show or hide the pagination. Toggle true for show, false for hide.
+   updateURL: false,                // Toggle this true if you want the URL to be updated automatically when the user scroll to each page.
+   beforeMove: function(index) {},  // This option accepts a callback function. The function will be called before the page moves.
+   afterMove: function(index) {},   // This option accepts a callback function. The function will be called after the page moves.
+   loop: false,                     // You can have the page loop back to the top/bottom when the user navigates at up/down on the first/last page.
+   keyboard: true,                  // You can activate the keyboard controls
+   responsiveFallback: false,        // You can fallback to normal page scroll by defining the width of the browser in which
+                                    // you want the responsive fallback to be triggered. For example, set this to 600 and whenever
+                                    // the browser's width is less than 600, the fallback will kick in.
+   direction: "vertical"            // You can now define the direction of the One Page Scroll animation. Options available are "vertical" and "horizontal". The default value is "vertical".  
+});
+    </script>
+</body>
+
+</html>
