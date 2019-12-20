@@ -3,7 +3,7 @@
 
 <head>
 	<meta charset="UTF-8">
-	<title>Bootstrap 4</title>
+	<title>Sorts LP</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
 	 crossorigin="anonymous">
@@ -72,7 +72,7 @@
         <img src="static/img/2.png" alt="" class="d-block w-100 carousel-item-img">
                   <div class="carousel-caption wow fadeInDown">
             <h3>Сортировка подсчётом</h3>
-            <p>Хуйня</p>
+            <p>Зависит от диапзона встречающихся чисел. Если диапозон чисел небольшой, то можно отсортировать почти за линейное время. Но зато тратит больше памяти.</p>
           </div>
       </div>
 		</div>
@@ -105,6 +105,11 @@
         <div class="form-group" id = "rnd_input">
             <label for="n">Введите n</label>
             <input class="form-control" type=" text" placeholder="N" name = "n" id = "n">
+        </div>
+        <div class="form-group" id = "limits">
+            <label for="start" class = "d-block">Введите диапозон чисел</label>
+            <input class="form-control" type=" text" placeholder="Start" name = "start" id = "start" value="-100000" onblur="if(value=='') value = '-100000'" onfocus="if(value=='-100000') value = ''" > <span class = "font-weight-bold"> &mdash; </span>
+            <input class="form-control" type=" text" placeholder="End" name = "end" id = "end" value="100000" onblur="if(value=='') value = '100000'" onfocus="if(value=='100000') value = ''" >
         </div>
 
         <div class="form-group invisible" id = "sam_input">
@@ -144,7 +149,7 @@
         <td>{{ time['insert'] }}</td>
         <td>{{ time['quick'] }}</td>
         <td>{{ time['merge'] }}</td>
-        <td>{{ time['bubble'] }}</td>
+        <td>{{ time['count'] }}</td>
       </tr>
       {% endfor %}
     </tbody>

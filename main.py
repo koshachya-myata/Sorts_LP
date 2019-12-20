@@ -23,16 +23,20 @@ def index():
         typeofarr = request.form.get('type')
         how = request.form.get('how')
         nums = request.form.get('nums')
-        print(n)
+        start = int(request.form.get('start'))
+        end = int(request.form.get('end'))
         if (how == 'rnd'):
             time_stamps['n'] = n
             n = int(n)
             if typeofarr == 'int':
                 time_stamps['type'] = 'INT'
-                arr = create_rnd_list_int(n)
+                arr = create_rnd_list_int(n, start, end)
+                time_stamps['count'] = count_sort_int_time(arr)
             else:
                 time_stamps['type'] = 'FLOAT'
-                arr = create_rnd_list_float(n)
+                arr = create_rnd_list_float(n, start, end)
+                time_stamps['count'] = count_sort_float_time(arr)
+                print('FLOAT')
         else:
             time_stamps['n'] = len(nums.split())
             if typeofarr == 'int':
@@ -46,7 +50,6 @@ def index():
         time_stamps['insert'] = insert_sort_time(arr)
         time_stamps['quick'] = quick_sort_time(arr)
         time_stamps['merge'] = merge_sort_time(arr)
-        #time_stamps['count'] = count_sort_time(arr)
         rows.append(time_stamps)
         if len(rows) == 6:
             rows = rows[1:]

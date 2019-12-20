@@ -1,30 +1,28 @@
 import time
 import random
 
-def create_rnd_list_int(size):
+def create_rnd_list_int(size, start, end):
     a = [0] * size
     for i in range(0, size):
-        a[i] = random.randint(-10000, 10000)
+        a[i] = random.randint(start, end)
     return a
-def create_rnd_list_float(size):
+def create_rnd_list_float(size, start, end):
     a = [0] * size
     for i in range(0, size):
-        a[i] = random.uniform(-10000, 10000)
+        a[i] = random.uniform(start, end)
     return a
 
 def bubble_sort_time(arr): # bubble
-    t = time.time()
+    time_stamp = time.time()
     for i in range(len(arr) - 1):
         for j in range(len(arr) - i - 1):
             if arr[j] > arr[j + 1]:
-                buff = arr[j]
-                arr[j] = arr[j + 1]
-                arr[j + 1] = buff
+                arr[j], arr[j+1] = arr[j+1], arr[j]
 
-    return time.time() - t
+    return time.time() - time_stamp
 
 def insert_sort_time(arr): #insert
-    t = time.time()
+    time_stamp = time.time()
     for i in range(len(arr)):
         j = i - 1
         key = arr[i]
@@ -35,7 +33,7 @@ def insert_sort_time(arr): #insert
 
         arr[j + 1] = key
 
-    return time.time() - t
+    return time.time() - time_stamp
 def partition(nums, low, high):
     pivot = nums[(low + high) // 2]
     i = low - 1
@@ -64,9 +62,9 @@ def quick_sort(nums):
     _quick_sort(nums, 0, len(nums) - 1)
 
 def quick_sort_time(arr):
-    t = time.time()
+    time_stamp = time.time()
     quick_sort(arr)
-    return time.time() - t
+    return time.time() - time_stamp
 
 def merge(left_list, right_list):
     sorted_list = []
@@ -106,19 +104,35 @@ def merge_sort(nums):
 
     return merge(left_list, right_list)
 def merge_sort_time(arr):
-    t = time.time()
+    time_stamp = time.time()
     merge_sort(arr)
-    return time.time() - t
+    return time.time() - time_stamp
 
-def count_sort_time(A):
-    t = time.time()
-    scope = max(A) + 1
+def count_sort_int_time(arr):
+    time_stamp = time.time()
+    min_num = min(arr)
+    scope = max(arr) + abs(min_num) + 1
     C = [0] * scope
-    for x in A:
-        C[x] += 1
-    A[:] = []
+    for x in arr:
+        C[x + abs(min_num)] += 1
+    arr[:] = []
     for number in range(scope):
-        A += [number] * C[number]
+        arr += [number-  abs(min_num)] * C[number]
 
-    return time.time() - t
+    return time.time() - time_stamp
+def count_sort_float_time(arr):
+    time_stamp = time.time()
+    d = dict()
+    for el in arr:
+        if el not in d:
+            d[el] = 1
+        else:
+            d[el] += 1
+    list_keys = list(d.keys())
+    list_keys.sort()
+    arr[:] = []
+    for i in list_keys:
+        arr += [i] * d[i]
+    return time.time() - time_stamp
+
 
