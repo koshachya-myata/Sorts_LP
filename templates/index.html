@@ -21,13 +21,14 @@
 
 <body class="m-0 p-0">
   <div class="main">
-
-      <div class="hero container-fluid position-relative section">  
+    <div id="hero-wrap" class="section">
+      <div class="hero position-relative" id = "hero">  
           <div class="landing-text text-center">  
               <h1 class = "wow fadeIn" data-wow-duration = "0.7s">Какая сортировка лучше?</h1>
               <h4 class = "display-4 wow fadeIn" data-wow-duration = "0.7s">В настоящей работе, Мы сравним скорости выполнения различных сортировок. Проанализируем результаты, сформулируем вывод.</h4>
           </div>
       </div>
+    </div>
 
 
 
@@ -168,9 +169,10 @@
 
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
 	 crossorigin="anonymous"></script>
+   <script src = "static/js/particles.min.js"></script>
+   <script src = "static/js/onepage.js"></script>
 
     <script src="/static/js/main.js"> </script>
-      <script src = "static/js/onepage.js"></script>
     <script>
       $(".main").onepage_scroll({
    sectionContainer: ".section",     // sectionContainer accepts any kind of selector in case you don't want to use section

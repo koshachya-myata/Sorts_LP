@@ -1,3 +1,5 @@
+
+particlesJS.load('hero', '/static/js/particles-settings.json')
 $('#mySlider').carousel({
   interval: false
 })
@@ -11,4 +13,5 @@ $('#rnd').click(function() {
 	$('#sam_input').toggleClass('invisible');
 	$('#limits').toggleClass('invisible');
  });
+
 

@@ -108,7 +108,14 @@ def merge_sort_time(arr):
     merge_sort(arr)
     return time.time() - time_stamp
 
+def count_sort(arr, type_of_nums):
+    if type_of_nums == "int":
+        t = count_sort_int_time(arr)
+    else:
+        t = count_sort_float_time(arr)
+    return t
 def count_sort_int_time(arr):
+
     time_stamp = time.time()
     min_num = min(arr)
     scope = max(arr) + abs(min_num) + 1
@@ -118,8 +125,8 @@ def count_sort_int_time(arr):
     arr[:] = []
     for number in range(scope):
         arr += [number-  abs(min_num)] * C[number]
-
     return time.time() - time_stamp
+
 def count_sort_float_time(arr):
     time_stamp = time.time()
     d = dict()
@@ -129,7 +136,7 @@ def count_sort_float_time(arr):
         else:
             d[el] += 1
     list_keys = list(d.keys())
-    list_keys.sort()
+    merge_sort(list_keys) # Any sort
     arr[:] = []
     for i in list_keys:
         arr += [i] * d[i]

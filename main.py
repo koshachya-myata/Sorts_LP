@@ -1,5 +1,6 @@
 from flask import Flask, request, render_template, redirect
 from sorts import *
+import copy
 
 app = Flask(__name__)
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
@@ -31,12 +32,9 @@ def index():
             if typeofarr == 'int':
                 time_stamps['type'] = 'INT'
                 arr = create_rnd_list_int(n, start, end)
-                time_stamps['count'] = count_sort_int_time(arr)
             else:
                 time_stamps['type'] = 'FLOAT'
                 arr = create_rnd_list_float(n, start, end)
-                time_stamps['count'] = count_sort_float_time(arr)
-                print('FLOAT')
         else:
             time_stamps['n'] = len(nums.split())
             if typeofarr == 'int':
@@ -45,11 +43,21 @@ def index():
             else:
                 time_stamps['type'] = 'FLOAT'
                 arr = list(map(float, nums.split(' ')))
-        #print(arr)
-        time_stamps['bubble'] = bubble_sort_time(arr)
-        time_stamps['insert'] = insert_sort_time(arr)
-        time_stamps['quick'] = quick_sort_time(arr)
-        time_stamps['merge'] = merge_sort_time(arr)
+
+
+        arr_sup = copy.deepcopy(arr)
+        time_stamps['count'] = count_sort(arr_sup, typeofarr)
+
+        arr_sup = arr[:]
+        time_stamps['insert'] = insert_sort_time(arr_sup)
+        arr_sup = arr[:]
+        time_stamps['quick'] = quick_sort_time(arr_sup)
+        arr_sup = arr[:]
+        time_stamps['merge'] = merge_sort_time(arr_sup)
+        arr_sup = arr[:]
+
+        #time_stamps['bubble'] = bubble_sort_time(arr_sup)
+
         rows.append(time_stamps)
         if len(rows) == 6:
             rows = rows[1:]
