@@ -34,36 +34,27 @@ def insert_sort_time(arr): #insert
         arr[j + 1] = key
 
     return time.time() - time_stamp
-def partition(nums, low, high):
-    pivot = nums[(low + high) // 2]
-    i = low - 1
-    j = high + 1
-    while True:
-        i += 1
-        while nums[i] < pivot:
-            i += 1
 
-        j -= 1
-        while nums[j] > pivot:
-            j -= 1
 
-        if i >= j:
-            return j
+def quick_sort(nums, fst, lst):
+    if fst >= lst: return
 
-        nums[i], nums[j] = nums[j], nums[i]
+    i, j = fst, lst
+    pivot = nums[(fst + lst) // 2]
 
-def quick_sort(nums):
-    def _quick_sort(items, low, high):
-        if low < high:
-            split_index = partition(items, low, high)
-            _quick_sort(items, low, split_index)
-            _quick_sort(items, split_index + 1, high)
+    while i <= j:
+        while nums[i] < pivot: i += 1
+        while nums[j] > pivot: j -= 1
+        if i <= j:
+            nums[i], nums[j] = nums[j], nums[i]
+            i, j = i + 1, j - 1
+    quick_sort(nums, fst, j)
+    quick_sort(nums, i, lst)
 
-    _quick_sort(nums, 0, len(nums) - 1)
 
 def quick_sort_time(arr):
     time_stamp = time.time()
-    quick_sort(arr)
+    quick_sort(arr, 0, len(arr) - 1)
     return time.time() - time_stamp
 
 def merge(left_list, right_list):

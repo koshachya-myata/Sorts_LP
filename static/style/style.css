@@ -22,10 +22,7 @@
 	font-size:20px;
 }
 .invisible{
-	display: none;
-}
-hero > h1{
-	
+	display: none !important;
 }
 body{
 
@@ -98,4 +95,52 @@ table{
 #limits input{
 	display: inline-block;
 	width: 300px;
+}
+.form-row
+{
+	display: block;
+}
+
+@media (max-height: 900px) {
+	label{
+		font-weight: 450 !important;
+	}
+	.tech_header{
+		font-size: 20px;
+		font-weight: bold;
+	}
+	.form_tech{
+		margin-top: 20px;
+	}
+	.form-row{
+		width: 400px;
+		justify-content: space-between;
+		display: flex;
+		flex-direction: row;
+	}
+	#sam_input{
+		margin: 10px 0px 10px 0px;
+	}
+	.form-row-long{
+		margin: 10px 0px 10px 0px;
+		display: flex;
+		width: 900px;
+		justify-content: space-around;
+	}
+	.form-row-long div{
+		display: inline-block;
+	}
+	.form-b{
+		margin-top: 5px;
+	}
+	.table{
+		margin-top: 7px;
+		border-collapse: collapse;
+	}
+	.table th{
+		padding: 5px;
+	}
+	.table td{
+		padding: 5px;
+	}
 }

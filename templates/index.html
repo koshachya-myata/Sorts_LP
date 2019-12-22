@@ -93,39 +93,41 @@
       <h1 class="mt-5 tech_header">Еба тут можно тестить</h1>
 
       <form action="" method="POST" class = "form_tech">
-      <div class="form-check">
-              <input class="form-check-input" type="radio" name="how" id="rnd" value="rnd" checked>
-              <label class="form-check-label" for="rnd">Рандомные числа</label>
-        </div>
-
-      <div class="form-check">
-          <input class="form-check-input" type="radio" name="how" id="sam" value="sam">
-          <label class="form-check-label" for="sam">Самостоятельный ввод</label>
+      <div class="form-row"> 
+          <div class="form-check">
+                  <input class="form-check-input" type="radio" name="how" id="rnd" value="rnd" checked>
+                  <label class="form-check-label" for="rnd">Рандомные числа</label>
+            </div>
+          <div class="form-check">
+              <input class="form-check-input" type="radio" name="how" id="sam" value="sam">
+              <label class="form-check-label" for="sam">Самостоятельный ввод</label>
+          </div>
       </div>
-
-        <div class="form-group" id = "rnd_input">
-            <label for="n">Введите n</label>
-            <input class="form-control" type=" text" placeholder="N" name = "n" id = "n">
+        <div class="form-row-long" id = "form-row-long">
+          <div class="form-group" id = "rnd_input">
+              <label for="n">Введите n</label>
+              <input class="form-control" type=" text" placeholder="N" name = "n" id = "n">
+          </div>
+          <div class="form-group" id = "limits">
+              <label for="start" class = "d-block">Введите диапозон чисел</label>
+              <input class="form-control" type=" text" placeholder="Start" name = "start" id = "start" value="-100000" onblur="if(value=='') value = '-100000'" onfocus="if(value=='-100000') value = ''" > <span class = "font-weight-bold"> &mdash; </span>
+              <input class="form-control" type=" text" placeholder="End" name = "end" id = "end" value="100000" onblur="if(value=='') value = '100000'" onfocus="if(value=='100000') value = ''" >
+          </div>
         </div>
-        <div class="form-group" id = "limits">
-            <label for="start" class = "d-block">Введите диапозон чисел</label>
-            <input class="form-control" type=" text" placeholder="Start" name = "start" id = "start" value="-100000" onblur="if(value=='') value = '-100000'" onfocus="if(value=='-100000') value = ''" > <span class = "font-weight-bold"> &mdash; </span>
-            <input class="form-control" type=" text" placeholder="End" name = "end" id = "end" value="100000" onblur="if(value=='') value = '100000'" onfocus="if(value=='100000') value = ''" >
-        </div>
-
-        <div class="form-group invisible" id = "sam_input">
+        <div class="form-group invisible nums" id = "sam_input">
             <label for="nums">Введите числа через пробел</label>
             <input class="form-control" type=" text" placeholder="num num num.." name = "nums" id = "nums">
         </div>
-
-        <div class="form-check">
-          <input class="form-check-input" type="radio" name="type" id="int" value="int" checked>
-          <label class="form-check-label" for="int">Целые числа</label>
-        </div>
-        <div class="form-check">
-              <input class="form-check-input" type="radio" name="type" id="float" value="float">
-              <label class="form-check-label" for="float">Вещественные числа</label>
-        </div>
+        <div class="form-row">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="type" id="int" value="int" checked>
+            <label class="form-check-label" for="int">Целые числа</label>
+          </div>
+          <div class="form-check">
+                <input class="form-check-input" type="radio" name="type" id="float" value="float">
+                <label class="form-check-label" for="float">Вещественные числа</label>
+          </div>
+         </div>
         <button type="submit" class="btn btn-primary form-b">Submit</button>
         <!--<button type="button" class="btn btn-danger form-b">Reset</button>-->
       </form>

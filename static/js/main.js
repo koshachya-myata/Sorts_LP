@@ -4,14 +4,12 @@ $('#mySlider').carousel({
   interval: false
 })
 $('#sam').click(function() {
-	$('#rnd_input').toggleClass('invisible');
+	$('#form-row-long').toggleClass('invisible');
 	$('#sam_input').toggleClass('invisible');
-	$('#limits').toggleClass('invisible');
  });
 $('#rnd').click(function() {
-	$('#rnd_input').toggleClass('invisible');
+	$('#form-row-long').toggleClass('invisible');
 	$('#sam_input').toggleClass('invisible');
-	$('#limits').toggleClass('invisible');
  });
 
 
