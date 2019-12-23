@@ -24,8 +24,12 @@ def index():
         typeofarr = request.form.get('type')
         how = request.form.get('how')
         nums = request.form.get('nums')
-        start = int(request.form.get('start'))
-        end = int(request.form.get('end'))
+        if typeofarr == 'int':
+            start = int(request.form.get('start'))
+            end = int(request.form.get('end'))
+        else:
+            start = float(request.form.get('start'))
+            end = float(request.form.get('end'))
         if (how == 'rnd'):
             time_stamps['n'] = n
             n = int(n)
@@ -56,7 +60,7 @@ def index():
         time_stamps['merge'] = merge_sort_time(arr_sup)
         arr_sup = arr[:]
 
-        #time_stamps['bubble'] = bubble_sort_time(arr_sup)
+        time_stamps['bubble'] = bubble_sort_time(arr_sup)
 
         rows.append(time_stamps)
         if len(rows) == 6:

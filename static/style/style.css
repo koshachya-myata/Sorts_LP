@@ -27,7 +27,7 @@
 body{
 
 }
-#hero-wrap{
+#hero-wrap, #footer-wrap{
 	top: 0;
 	left: 0;
 	z-index: 1;
@@ -35,7 +35,7 @@ body{
 	width: 100%;
 	background: url(../img/bg.png);
 }
-.hero{
+.hero, .footer{
 	position: relative;
 	height: 100vh;
 	width: 100%;
@@ -65,11 +65,11 @@ body{
 .landing-text{
 	width: 900px;
 }
-.hero h1{
+.hero h1, .footer h1{
 	color: #fff;
 	font-size: 60px;
 }
-.hero h4{
+.hero h4, .footer h4{
 	margin-top: 30px;	
 	color: #fff;
 	font-size: 	40px;

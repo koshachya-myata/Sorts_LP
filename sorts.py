@@ -9,7 +9,7 @@ def create_rnd_list_int(size, start, end):
 def create_rnd_list_float(size, start, end):
     a = [0] * size
     for i in range(0, size):
-        a[i] = random.uniform(start, end)
+        a[i] = round( random.uniform(start, end), 4)
     return a
 
 def bubble_sort_time(arr): # bubble
@@ -57,43 +57,39 @@ def quick_sort_time(arr):
     quick_sort(arr, 0, len(arr) - 1)
     return time.time() - time_stamp
 
-def merge(left_list, right_list):
-    sorted_list = []
-    left_list_index = right_list_index = 0
 
-    left_list_length, right_list_length = len(left_list), len(right_list)
+def merge_sort(arr):
+    if len(arr) > 1:
+        mid = len(arr) // 2  # Finding the mid of the array
+        L = arr[:mid]  # Dividing the array elements
+        R = arr[mid:]  # into 2 halves
 
-    for _ in range(left_list_length + right_list_length):
-        if left_list_index < left_list_length and right_list_index < right_list_length:
+        merge_sort(L)  # Sorting the first half
+        merge_sort(R)  # Sorting the second half
 
-            if left_list[left_list_index] <= right_list[right_list_index]:
-                sorted_list.append(left_list[left_list_index])
-                left_list_index += 1
+        i = j = k = 0
 
+        # Copy data to temp arrays L[] and R[]
+        while i < len(L) and j < len(R):
+            if L[i] < R[j]:
+                arr[k] = L[i]
+                i += 1
             else:
-                sorted_list.append(right_list[right_list_index])
-                right_list_index += 1
+                arr[k] = R[j]
+                j += 1
+            k += 1
 
-        elif left_list_index == left_list_length:
-            sorted_list.append(right_list[right_list_index])
-            right_list_index += 1
+        # Checking if any element was left
+        while i < len(L):
+            arr[k] = L[i]
+            i += 1
+            k += 1
 
-        elif right_list_index == right_list_length:
-            sorted_list.append(left_list[left_list_index])
-            left_list_index += 1
+        while j < len(R):
+            arr[k] = R[j]
+            j += 1
+            k += 1
 
-    return sorted_list
-
-def merge_sort(nums):
-    if len(nums) <= 1:
-        return nums
-
-    mid = len(nums) // 2
-
-    left_list = merge_sort(nums[:mid])
-    right_list = merge_sort(nums[mid:])
-
-    return merge(left_list, right_list)
 def merge_sort_time(arr):
     time_stamp = time.time()
     merge_sort(arr)
